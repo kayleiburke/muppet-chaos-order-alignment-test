@@ -24,9 +24,9 @@ def calculate_result(responses, ratings_values, muppets)
       muppets.map do |m|
         if m["id"].to_s == result["muppet_id"].to_s
           if m["count"]
-            m["count"] = m["count"] + 1
+            m["count"] = m["count"] + result["value"].to_i
           else
-            m["count"] = 1
+            m["count"] = result["value"].to_i
           end
         end
         m
@@ -34,13 +34,14 @@ def calculate_result(responses, ratings_values, muppets)
     end
   end
 
+  puts muppets.map {|m| [m["label"], m["count"]] }
   muppets.max_by{|m| m["count"] }
 end
 
 # sample_responses = [{:question=>"1", :answer=>3}, {:question=>"2", :answer=>1}, {:question=>"3", :answer=>2}, {:question=>"4", :answer=>3}, {:question=>"5", :answer=>4}, {:question=>"6", :answer=>2}, {:question=>"7", :answer=>3}]
 # larger_sample_responses = [{:question=>"1", :answer=>1}, {:question=>"2", :answer=>2}, {:question=>"3", :answer=>3}, {:question=>"4", :answer=>4}, {:question=>"5", :answer=>5}, {:question=>"6", :answer=>1}, {:question=>"7", :answer=>3}, {:question=>"8", :answer=>4}, {:question=>"9", :answer=>1}, {:question=>"10", :answer=>3}, {:question=>"11", :answer=>4}, {:question=>"12", :answer=>5}, {:question=>"13", :answer=>1}, {:question=>"14", :answer=>2}, {:question=>"15", :answer=>3}, {:question=>"16", :answer=>4}, {:question=>"17", :answer=>3}, {:question=>"18", :answer=>2}, {:question=>"19", :answer=>3}, {:question=>"20", :answer=>4}, {:question=>"21", :answer=>2}, {:question=>"22", :answer=>4}, {:question=>"23", :answer=>5}, {:question=>"24", :answer=>3}, {:question=>"25", :answer=>2}, {:question=>"26", :answer=>3}, {:question=>"27", :answer=>4}, {:question=>"28", :answer=>1}, {:question=>"29", :answer=>2}, {:question=>"30", :answer=>3}]
 # caras_responses = [{:question=>"1", :answer=>5}, {:question=>"2", :answer=>2}, {:question=>"3", :answer=>4}, {:question=>"4", :answer=>2}, {:question=>"5", :answer=>5}, {:question=>"6", :answer=>1}, {:question=>"7", :answer=>5}, {:question=>"8", :answer=>5}, {:question=>"9", :answer=>4}, {:question=>"10", :answer=>4}, {:question=>"11", :answer=>3}, {:question=>"12", :answer=>4}, {:question=>"13", :answer=>1}, {:question=>"14", :answer=>3}, {:question=>"15", :answer=>5}, {:question=>"16", :answer=>4}, {:question=>"17", :answer=>2}, {:question=>"18", :answer=>4}, {:question=>"19", :answer=>2}, {:question=>"20", :answer=>4}, {:question=>"21", :answer=>1}, {:question=>"22", :answer=>2}, {:question=>"23", :answer=>2}, {:question=>"24", :answer=>3}, {:question=>"25", :answer=>2}, {:question=>"26", :answer=>4}, {:question=>"27", :answer=>4}, {:question=>"28", :answer=>2}, {:question=>"29", :answer=>5}, {:question=>"30", :answer=>5}]
-# calculate_result(caras_responses, ratings_values, muppets)
+# result = calculate_result(caras_responses, ratings_values, muppets)
 
 print_instructions
 responses = []
@@ -62,6 +63,7 @@ result = calculate_result(responses, ratings_values, muppets)
 puts "=====Your result is:====="
 puts result["label"]
 puts result["description"]
+puts result["count"]
 
 
 
