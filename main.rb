@@ -31,7 +31,6 @@ quiz_hash = {
 quiz = Quiz.new(quiz_hash)
 quiz.print_instructions
 responses = quiz.run_quiz
-#print_responses(responses)
 results = quiz.calculate_result(responses)
 
 max = results.max_by{|k,v| v}

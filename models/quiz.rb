@@ -34,27 +34,23 @@ class Quiz
         answer = gets.chomp.to_i
       end
 
-      responses.push({ question: question, answer: question_choices.find { |choice| choice.order.to_i == answer }})
+      responses.push(question_choices.find { |choice| choice.order.to_i == answer })
     end
     responses
   end
 
   def calculate_result(responses)
     outcome_scores = Hash.new(0)
-    responses.each do |response|
-      question = response[:question]
-      answer = response[:answer]
 
+    responses.each do |response|
       #puts question.label
       outcomes.each do |outcome|
         # puts outcome.label
-        outcome_scores[outcome.label] = outcome_scores[outcome.label] + choices_outcomes.find { |co| co.choice_id == answer.id && co.outcome_id == outcome.id }.value.to_i
+        outcome_scores[outcome.label] = outcome_scores[outcome.label] + choices_outcomes.find { |co| co.choice_id == response.id && co.outcome_id == outcome.id }.value.to_i
         # puts outcome_scores[outcome.label].to_s
       end
     end
 
     outcome_scores
   end
-
-  private
 end

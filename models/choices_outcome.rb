@@ -7,8 +7,4 @@ class ChoicesOutcome
     @outcome_id = outcome_id
     @value = value
   end
-
-  def choice
-    puts "here"
-  end
 end
