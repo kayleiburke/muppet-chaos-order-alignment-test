@@ -14,16 +14,12 @@ class Quiz
   def create_objects(object_name, input_list)
     arr = []
     input_list.each do |input|
-      values = []
-      input_list.headers.each do |header|
-        values.push(input[header])
-      end
-      arr.push(create_object(object_name, values))
+      arr.push(create_object(object_name, input))
     end
     arr
   end
 
   def create_object(object_name, values)
-    Kernel.const_get(object_name).new(*values)
+    Kernel.const_get(object_name).new(values)
   end
 end

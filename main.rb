@@ -3,10 +3,10 @@ require "pry-byebug"
 require "csv"
 Dir["models/*.rb", "interactors/*.rb"].each {|file| require_relative file }
 
-questions = CSV.read("csvs/questions.csv", headers: true)
-choices = CSV.read("csvs/choices.csv", headers: true)
-outcomes = CSV.read("csvs/outcomes.csv", headers: true)#.map {|row| row.to_hash }
-choices_outcomes = CSV.read("csvs/choices_outcomes.csv", headers: true)#.map {|row| row.to_hash }
+questions = CSV.read("csvs/questions.csv", headers: true).map {|row| row.to_hash.transform_keys(&:to_sym) }
+choices = CSV.read("csvs/choices.csv", headers: true).map {|row| row.to_hash.transform_keys(&:to_sym) }
+outcomes = CSV.read("csvs/outcomes.csv", headers: true).map {|row| row.to_hash.transform_keys(&:to_sym) }
+choices_outcomes = CSV.read("csvs/choices_outcomes.csv", headers: true).map {|row| row.to_hash.transform_keys(&:to_sym) }
 
 quiz_hash = {
     id: 1,
@@ -37,15 +37,6 @@ debugger
 # display quiz
 # cycle through question
 # gather the answers, feed into calculator, which calculates the result
-
-
-
-def create_questions(questions)
-  count = 1
-
-  questions.each do |q|
-  end
-end
 
 def print_instructions
   puts "On a scale of 1 to 5, please indicate how much you agree with each of the following statements."
