@@ -8,26 +8,6 @@ choices = CSV.read("csvs/choices.csv", headers: true)
 outcomes = CSV.read("csvs/outcomes.csv", headers: true)#.map {|row| row.to_hash }
 choices_outcomes = CSV.read("csvs/choices_outcomes.csv", headers: true)#.map {|row| row.to_hash }
 
-q_objects = []
-questions.each do |q|
-  q_objects.push(Question.new(q["id"], q["label"]))
-end
-
-choice_objects = []
-choices.each_with_index do |c|
-  choice_objects.push(Choice.new(c["id"], c["label"], c["question_id"], c["order"]))
-end
-
-outcome_objects = []
-outcomes.each_with_index do |c, index|
-  outcome_objects.push(Outcome.new(c["id"], c["label"], c["description"]))
-end
-
-choices_outcome_objects = []
-choices_outcomes.each_with_index do |c, index|
-  choices_outcome_objects.push(ChoicesOutcome.new(c["id"], c["choice_id"], c["outcome_id"], c["value"]))
-end
-
 quiz_hash = {
     id: 1,
     description: "My Quiz",
