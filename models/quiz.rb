@@ -1,4 +1,6 @@
 class Quiz
+  extend ActiveRecordLite::ClassMethods
+
   attr_accessor :name, :description, :instructions, :questions, :choices, :outcomes, :choices_outcomes
 
   def initialize(id:, description:, instructions:, questions:, choices:, outcomes:, choices_outcomes:)

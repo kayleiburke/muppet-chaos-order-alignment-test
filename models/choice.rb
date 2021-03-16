@@ -1,4 +1,6 @@
 class Choice
+  extend ActiveRecordLite::ClassMethods
+
   attr_accessor :id, :label, :question_id, :order
 
   def initialize(id:, label:, question_id:, order:)
