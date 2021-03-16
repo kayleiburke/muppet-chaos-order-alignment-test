@@ -1,11 +1,61 @@
 # frozen_string_literal: true
 require "pry-byebug"
 require "csv"
+Dir["models/*.rb", "interactors/*.rb"].each {|file| require_relative file }
 
-questions = CSV.read("questions.csv", headers: true)
-ratings = CSV.read("ratings.csv", headers: true)
-muppets = CSV.read("muppets.csv", headers: true).map {|row| row.to_hash }
-ratings_values = CSV.read("ratings_values.csv", headers: true).map {|row| row.to_hash }
+questions = CSV.read("csvs/questions.csv", headers: true)
+choices = CSV.read("csvs/choices.csv", headers: true)
+outcomes = CSV.read("csvs/outcomes.csv", headers: true)#.map {|row| row.to_hash }
+choices_outcomes = CSV.read("csvs/choices_outcomes.csv", headers: true)#.map {|row| row.to_hash }
+
+q_objects = []
+questions.each do |q|
+  q_objects.push(Question.new(q["id"], q["label"]))
+end
+
+choice_objects = []
+choices.each_with_index do |c|
+  choice_objects.push(Choice.new(c["id"], c["label"], c["question_id"], c["order"]))
+end
+
+outcome_objects = []
+outcomes.each_with_index do |c, index|
+  outcome_objects.push(Outcome.new(c["id"], c["label"], c["description"]))
+end
+
+choices_outcome_objects = []
+choices_outcomes.each_with_index do |c, index|
+  choices_outcome_objects.push(ChoicesOutcome.new(c["id"], c["choice_id"], c["outcome_id"], c["value"]))
+end
+
+quiz = Quiz.new(1, "My Quiz", "instructions", questions, choices, outcomes, choices_outcomes)
+
+# user has flexibility to know where data comes from
+# how the user
+# given the data, calculate the quiz
+# #instantiating objects with the right data
+#
+# create objects in separate folder
+# models, interactors folder
+# csvs in another folder
+# data in a folder
+# Gemfile, .lock, main.rb in root
+
+#instantiate questions
+# instantiate choices
+# instantiate quiz
+# display quiz
+# cycle through question
+# gather the answers, feed into calculator, which calculates the result
+
+
+
+def create_questions(questions)
+  count = 1
+
+  questions.each do |q|
+  end
+end
 
 def print_instructions
   puts "On a scale of 1 to 5, please indicate how much you agree with each of the following statements."
@@ -20,9 +70,15 @@ def calculate_result(responses, ratings_values, muppets)
 
     result = ratings_values.find {|row| row["question_id"] == question.to_s && row["rating_id"] == answer.to_s }
 
+    score = Hash.new(0)
     if result
       muppets.map do |m|
         if m["id"].to_s == result["muppet_id"].to_s
+          score["muppet"] = result["label"]
+          score["count"] = score["count" + 1]
+
+
+
           if m["count"]
             m["count"] = m["count"] + result["value"].to_i
           else
