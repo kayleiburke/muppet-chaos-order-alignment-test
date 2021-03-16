@@ -1,21 +1,18 @@
 # frozen_string_literal: true
 require "pry-byebug"
 require "csv"
-Dir["models/*.rb", "interactors/*.rb"].each {|file| require_relative file }
+require "active_support/inflector"
 
-questions = CSV.read("csvs/questions.csv", headers: true).map {|row| row.to_hash.transform_keys(&:to_sym) }
-choices = CSV.read("csvs/choices.csv", headers: true).map {|row| row.to_hash.transform_keys(&:to_sym) }
-outcomes = CSV.read("csvs/outcomes.csv", headers: true).map {|row| row.to_hash.transform_keys(&:to_sym) }
-choices_outcomes = CSV.read("csvs/choices_outcomes.csv", headers: true).map {|row| row.to_hash.transform_keys(&:to_sym) }
+Dir["models/*.rb", "interactors/*.rb"].each {|file| require_relative file }
 
 quiz_hash = {
     id: 1,
     description: "My Quiz",
     instructions: "",
-    questions: questions,
-    choices: choices,
-    outcomes: outcomes,
-    choices_outcomes: choices_outcomes
+    questions: ObjectCreator.new.perform("Question"),
+    choices: ObjectCreator.new.perform("Choice"),
+    outcomes: ObjectCreator.new.perform("Outcome"),
+    choices_outcomes: ObjectCreator.new.perform("ChoicesOutcome"),
 }
 quiz = Quiz.new(quiz_hash)
 debugger

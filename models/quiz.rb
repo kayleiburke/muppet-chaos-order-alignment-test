@@ -5,21 +5,9 @@ class Quiz
     @id = id
     @description = description
     @instructions = instructions
-    @questions = create_objects("Question", questions)
-    @choices = create_objects("Choice", choices)
-    @outcomes = create_objects("Outcome", outcomes)
-    @choices_outcomes = create_objects("ChoicesOutcome", choices_outcomes)
-  end
-
-  def create_objects(object_name, input_list)
-    arr = []
-    input_list.each do |input|
-      arr.push(create_object(object_name, input))
-    end
-    arr
-  end
-
-  def create_object(object_name, values)
-    Kernel.const_get(object_name).new(values)
+    @questions = questions
+    @choices = choices
+    @outcomes = outcomes
+    @choices_outcomes = choices_outcomes
   end
 end
