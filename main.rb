@@ -7,9 +7,8 @@ Dir["models/*.rb", "interactors/*.rb"].each {|file| require_relative file }
 
 def get_instructions
   [
-      "On a scale of 1 to 5, please indicate how much you agree with each of the following statements.",
-      "Strongly Disagree | Disagree | Neutral | Agree | Strongly Agree" ,
-      "       1          |     2    |    3    |   4   |       5       "
+      "Find the workout that's best for you!",
+      "Please enter the number corresponding to the response that best applies to each statement."
   ]
 end
 
