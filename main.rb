@@ -28,7 +28,17 @@ choices_outcomes.each_with_index do |c, index|
   choices_outcome_objects.push(ChoicesOutcome.new(c["id"], c["choice_id"], c["outcome_id"], c["value"]))
 end
 
-quiz = Quiz.new(1, "My Quiz", "instructions", questions, choices, outcomes, choices_outcomes)
+quiz_hash = {
+    id: 1,
+    description: "My Quiz",
+    instructions: "",
+    questions: questions,
+    choices: choices,
+    outcomes: outcomes,
+    choices_outcomes: choices_outcomes
+}
+quiz = Quiz.new(quiz_hash)
+debugger
 
 # user has flexibility to know where data comes from
 # how the user
