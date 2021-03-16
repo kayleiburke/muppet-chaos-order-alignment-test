@@ -1,4 +1,4 @@
-class Calculation
+class Calculator
   def calculate_result(responses, ratings_values, muppets) # (responses, quiz)
     responses.each do |response|
       question = response[:question]
