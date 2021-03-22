@@ -11,3 +11,153 @@ id,label,question_id,order
 10,31-45,3,2
 11,46-65,3,3
 12,65+,3,4
+13,Strongly Disagree,4,1
+14,Disagree,4,2
+15,Neither Agree nor Disagree,4,3
+16,Agree,4,4
+17,Strongly Agree,4,5
+18,Strongly Disagree,5,1
+19,Disagree,5,2
+20,Neither Agree nor Disagree,5,3
+21,Agree,5,4
+22,Strongly Agree,5,5
+23,Strongly Disagree,6,1
+24,Disagree,6,2
+25,Neither Agree nor Disagree,6,3
+26,Agree,6,4
+27,Strongly Agree,6,5
+28,Strongly Disagree,7,1
+29,Disagree,7,2
+30,Neither Agree nor Disagree,7,3
+31,Agree,7,4
+32,Strongly Agree,7,5
+33,Strongly Disagree,8,1
+34,Disagree,8,2
+35,Neither Agree nor Disagree,8,3
+36,Agree,8,4
+37,Strongly Agree,8,5
+38,Strongly Disagree,9,1
+39,Disagree,9,2
+40,Neither Agree nor Disagree,9,3
+41,Agree,9,4
+42,Strongly Agree,9,5
+43,Strongly Disagree,10,1
+44,Disagree,10,2
+45,Neither Agree nor Disagree,10,3
+46,Agree,10,4
+47,Strongly Agree,10,5
+48,Strongly Disagree,11,1
+49,Disagree,11,2
+50,Neither Agree nor Disagree,11,3
+51,Agree,11,4
+52,Strongly Agree,11,5
+53,Strongly Disagree,12,1
+54,Disagree,12,2
+55,Neither Agree nor Disagree,12,3
+56,Agree,12,4
+57,Strongly Agree,12,5
+58,Strongly Disagree,13,1
+59,Disagree,13,2
+60,Neither Agree nor Disagree,13,3
+61,Agree,13,4
+62,Strongly Agree,13,5
+63,Strongly Disagree,14,1
+64,Disagree,14,2
+65,Neither Agree nor Disagree,14,3
+66,Agree,14,4
+67,Strongly Agree,14,5
+68,Strongly Disagree,15,1
+69,Disagree,15,2
+70,Neither Agree nor Disagree,15,3
+71,Agree,15,4
+72,Strongly Agree,15,5
+73,Strongly Disagree,16,1
+74,Disagree,16,2
+75,Neither Agree nor Disagree,16,3
+76,Agree,16,4
+77,Strongly Agree,16,5
+78,Strongly Disagree,17,1
+79,Disagree,17,2
+80,Neither Agree nor Disagree,17,3
+81,Agree,17,4
+82,Strongly Agree,17,5
+83,Strongly Disagree,18,1
+84,Disagree,18,2
+85,Neither Agree nor Disagree,18,3
+86,Agree,18,4
+87,Strongly Agree,18,5
+88,Strongly Disagree,19,1
+89,Disagree,19,2
+90,Neither Agree nor Disagree,19,3
+91,Agree,19,4
+92,Strongly Agree,19,5
+93,Strongly Disagree,20,1
+94,Disagree,20,2
+95,Neither Agree nor Disagree,20,3
+96,Agree,20,4
+97,Strongly Agree,20,5
+98,Strongly Disagree,21,1
+99,Disagree,21,2
+100,Neither Agree nor Disagree,21,3
+101,Agree,21,4
+102,Strongly Agree,21,5
+103,Strongly Disagree,22,1
+104,Disagree,22,2
+105,Neither Agree nor Disagree,22,3
+106,Agree,22,4
+107,Strongly Agree,22,5
+108,Strongly Disagree,23,1
+109,Disagree,23,2
+110,Neither Agree nor Disagree,23,3
+111,Agree,23,4
+112,Strongly Agree,23,5
+113,Strongly Disagree,24,1
+114,Disagree,24,2
+115,Neither Agree nor Disagree,24,3
+116,Agree,24,4
+117,Strongly Agree,24,5
+118,Strongly Disagree,25,1
+119,Disagree,25,2
+120,Neither Agree nor Disagree,25,3
+121,Agree,25,4
+122,Strongly Agree,25,5
+123,Strongly Disagree,26,1
+124,Disagree,26,2
+125,Neither Agree nor Disagree,26,3
+126,Agree,26,4
+127,Strongly Agree,26,5
+128,Strongly Disagree,27,1
+129,Disagree,27,2
+130,Neither Agree nor Disagree,27,3
+131,Agree,27,4
+132,Strongly Agree,27,5
+133,Strongly Disagree,28,1
+134,Disagree,28,2
+135,Neither Agree nor Disagree,28,3
+136,Agree,28,4
+137,Strongly Agree,28,5
+138,Strongly Disagree,29,1
+139,Disagree,29,2
+140,Neither Agree nor Disagree,29,3
+141,Agree,29,4
+142,Strongly Agree,29,5
+143,Strongly Disagree,30,1
+144,Disagree,30,2
+145,Neither Agree nor Disagree,30,3
+146,Agree,30,4
+147,Strongly Agree,30,5
+148,Strongly Disagree,31,1
+149,Disagree,31,2
+150,Neither Agree nor Disagree,31,3
+151,Agree,31,4
+152,Strongly Agree,31,5
+153,Strongly Disagree,32,1
+154,Disagree,32,2
+155,Neither Agree nor Disagree,32,3
+156,Agree,32,4
+157,Strongly Agree,32,5
+158,Strongly Disagree,33,1
+159,Disagree,33,2
+160,Neither Agree nor Disagree,33,3
+161,Agree,33,4
+162,Strongly Agree,33,5
