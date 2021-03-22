@@ -1,4 +1,6 @@
 class Outcome
+  extend ActiveRecordLite::ClassMethods
+
   attr_accessor :id
   attr_accessor :label
   attr_accessor :description

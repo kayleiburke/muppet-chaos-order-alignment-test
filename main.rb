@@ -3,7 +3,7 @@ require "pry-byebug"
 require "csv"
 require "active_support/inflector"
 
-Dir["models/*.rb", "interactors/*.rb"].each {|file| require_relative file }
+Dir["models/concerns/*.rb", "models/*.rb", "interactors/*.rb"].each {|file| require_relative file }
 
 def get_instructions
   [
