@@ -78,6 +78,7 @@ quiz_outcome_values = [
     config13, config1, config2, config13, config3, config1
 ].flatten
 
+# this loop will print out the contents of the "values" column of the choices_outcomes.csv file for the muppet quiz
 quiz_outcome_values.each do |x|
   puts x
 end
