@@ -69,6 +69,8 @@ config13 = [
     2, 1, 0, 0, 0,
     0, 0, 0, 1, 2]
 
+# the quiz is constructed of 30 questions; each config in the array below corresponds to a question
+# questions are in order from 1 to 30
 quiz_outcome_values = [
     config1, config2, config3, config4, config5, config2, config2, config3,
     config4, config5, config1, config5, config13, config3, config3, config5,
