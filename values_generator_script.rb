@@ -1,18 +1,3 @@
-# arr = (13..162).step(1).to_a
-#
-# # arr.each do |x|
-# #   [1, 2, 3, 4, 5, 6].each do |y|
-# #     puts x
-# #     #puts y
-# #   end
-# # end
-#
-# arr = (1..30).step(1).to_a
-#
-# arr.each do |x|
-#
-# end
-
 ##
 ##
 ## Script to generate the values column (of the choices_outcomes.csv file) for the muppet quiz
