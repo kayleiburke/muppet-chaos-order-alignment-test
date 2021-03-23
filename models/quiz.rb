@@ -1,9 +1,9 @@
 class Quiz
   extend ActiveRecordLite::ClassMethods
 
-  attr_accessor :name, :description, :instructions, :questions, :choices, :outcomes, :choices_outcomes
+  attr_accessor :name, :description, :instructions, :questions, :choices, :outcomes, :choices_outcomes, :id
 
-  def initialize(id:, description:, instructions:, questions:, choices:, outcomes:, choices_outcomes:)
+  def initialize(id:, description:, instructions:, questions:, choices: [], outcomes:, choices_outcomes:)
     @id = id
     @description = description
     @instructions = instructions
@@ -22,7 +22,7 @@ class Quiz
   def run_quiz
     responses = []
     questions.each do |question|
-      question_choices = choices.select { |choice| choice.question_id == question.id }.sort_by { |choice| choice.order }
+      question_choices = question.choices # choices.select { |choice| choice.question_id == question.id }.sort_by { |choice| choice.order }
       puts "* #{question.label} *"
 
       question_choices.each do |choice|
@@ -45,11 +45,8 @@ class Quiz
     outcome_scores = Hash.new(0)
 
     responses.each do |response|
-      #puts question.label
       outcomes.each do |outcome|
-        # puts outcome.label
         outcome_scores[outcome.label] = outcome_scores[outcome.label] + choices_outcomes.find { |co| co.choice_id == response.id && co.outcome_id == outcome.id }.value.to_i
-        # puts outcome_scores[outcome.label].to_s
       end
     end
 

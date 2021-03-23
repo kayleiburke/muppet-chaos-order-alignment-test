@@ -12,7 +12,7 @@ module ActiveRecordLite
         # Returns array of arrays [ ["1", choice.question_id], [ "4", choice.id ] ]
         vals = args.map { |k, v| [v, record.send(k)] }
 
-        vals.all? { |arg_val, record_val| arg_val == record_val } # Returns true/false
+        vals.all? { |arg_val, record_val| arg_val.to_s == record_val.to_s } # Returns true/false
       end
     end
   end

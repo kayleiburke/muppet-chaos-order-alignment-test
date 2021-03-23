@@ -23,10 +23,9 @@ quiz_hash = {
     id: 1,
     description: "My Quiz",
     instructions: get_instructions,
-    questions: ObjectCreator.new.perform("Question"),
-    choices: ObjectCreator.new.perform("Choice"),
-    outcomes: ObjectCreator.new.perform("Outcome"),
-    choices_outcomes: ObjectCreator.new.perform("ChoicesOutcome"),
+    questions: Question.where(quiz_id: 1),
+    outcomes: Outcome.where(quiz_id: 1),
+    choices_outcomes: ChoicesOutcome.all,
 }
 quiz = Quiz.new(quiz_hash)
 quiz.print_instructions
