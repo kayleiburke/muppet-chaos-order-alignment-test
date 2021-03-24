@@ -1,7 +1,7 @@
-class Outcome
-  extend ActiveRecordLite::ClassMethods
+class Outcome < Base
 
-  attr_accessor :id, :label, :description, :quiz_id
+  attr_accessor :description, :label
+  attr_int :id, :quiz_id
 
   def initialize(id:, label:, description:"", quiz_id:)
     @id = id

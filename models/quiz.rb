@@ -1,16 +1,33 @@
-class Quiz
-  extend ActiveRecordLite::ClassMethods
+class Quiz < Base
 
-  attr_accessor :name, :description, :instructions, :questions, :choices, :outcomes, :choices_outcomes, :id
+  attr_accessor :name, :description, :id
 
-  def initialize(id:, description:, instructions:, questions:, choices: [], outcomes:, choices_outcomes:)
+  #:outcomes, :choices_outcomes,
+
+  def initialize(id:, name:, description:)
     @id = id
     @description = description
-    @instructions = instructions
-    @questions = questions
-    @choices = choices
-    @outcomes = outcomes
-    @choices_outcomes = choices_outcomes
+    @name = name
+  end
+
+  def instructions
+    Instruction.where(quiz_id: id)
+  end
+
+  def questions
+    Question.where(quiz_id: id)
+  end
+
+  def outcomes
+    Outcome.where(quiz_id: id)
+  end
+
+  def choices
+    Choice.in(question_id: questions.map(&:id))
+  end
+
+  def choices_outcomes
+    ChoicesOutcome.in(choice_id: choices.map(&:id))
   end
 
   def print_instructions

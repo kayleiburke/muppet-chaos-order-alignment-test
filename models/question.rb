@@ -1,7 +1,7 @@
-class Question
-  extend ActiveRecordLite::ClassMethods
+class Question < Base
 
-  attr_accessor :id, :label, :choices, :quiz_id, :order
+  attr_accessor :label, :choices
+  attr_int :id, :quiz_id, :order
 
   def initialize(id:, label:, quiz_id:, order:, choices: [])
     @id = id

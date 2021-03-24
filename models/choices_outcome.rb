@@ -1,7 +1,6 @@
-class ChoicesOutcome
-  extend ActiveRecordLite::ClassMethods
+class ChoicesOutcome < Base
 
-  attr_accessor :id, :choice_id, :outcome_id, :value
+  attr_int :id, :choice_id, :outcome_id, :value
 
   def initialize(id:, choice_id:, outcome_id:, value:)
     @id = id
