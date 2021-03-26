@@ -2,8 +2,6 @@ class Quiz < Base
 
   attr_accessor :name, :description, :id
 
-  #:outcomes, :choices_outcomes,
-
   def initialize(id:, name:, description:)
     @id = id
     @description = description
@@ -32,14 +30,14 @@ class Quiz < Base
 
   def print_instructions
     instructions.each do |instruction|
-      puts instruction
+      puts instruction.instruction
     end
   end
 
   def run_quiz
     responses = []
     questions.each do |question|
-      question_choices = question.choices # choices.select { |choice| choice.question_id == question.id }.sort_by { |choice| choice.order }
+      question_choices = question.choices
       puts "* #{question.label} *"
 
       question_choices.each do |choice|
@@ -58,6 +56,10 @@ class Quiz < Base
     responses
   end
 
+  # doesn't have to be run in a place that doesn't have a puts
+  # interactor by itself
+  # run quiz is its own interactor that knows how to take the quiz and output to the screen
+  #
   def calculate_result(responses)
     outcome_scores = Hash.new(0)
 

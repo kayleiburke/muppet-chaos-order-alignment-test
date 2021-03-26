@@ -1,6 +1,6 @@
 class ObjectCreator
   def perform(object_name)
-    file_path = "csvs/#{object_name.underscore.pluralize}.csv"
+    file_path = "lib/csvs/#{object_name.underscore.pluralize}.csv"
     csv_hash = CSV.read(file_path, headers: true).map {|row| row.to_hash.transform_keys(&:to_sym) }
     create_objects(object_name, csv_hash)
   end

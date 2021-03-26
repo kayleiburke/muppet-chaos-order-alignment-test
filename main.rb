@@ -3,7 +3,7 @@ require "pry-byebug"
 require "csv"
 require "active_support/inflector"
 
-Dir["models/concerns/*.rb", "models/*.rb", "interactors/*.rb"].each {|file| require_relative file }
+Dir["lib/models/concerns/*.rb", "lib/models/*.rb", "lib/interactors/*.rb"].each {|file| require_relative file }
 
 def print_responses(responses)
   responses.each_with_index do |response, index|
